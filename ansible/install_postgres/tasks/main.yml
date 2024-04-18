@@ -1,0 +1,17 @@
+--- 
+  # Устанавливаем postgresql15-server
+  - name: install postgresql 15
+    apt: 
+      name: 
+        - postgresql-15
+        - acl
+      state: present
+      update_cache: true
+  
+
+  # Запускаем postgresql-14
+  - name: enable and start service
+    service:
+      name: postgresql@15-main
+      state: started
+      enabled: true
